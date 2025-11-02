@@ -1,0 +1,73 @@
+.project-display {
+    display: none;
+    position: fixed;
+    height: 85%;
+    width: 90%;
+    max-width: 900px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid #000080;
+    box-shadow: 4px 4px 15px #00000066;
+    background-color: #ffffff;
+    z-index: 999;
+    font-family: Tahoma, sans-serif;
+}
+
+.project-display .content-area {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.project {
+    height: 250px;
+    width: 250px;
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 2px 2px 8px #0000004d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Tahoma, sans-serif;
+    font-size: 18px;
+    color: #000080;
+    transition: background-color 0.4s ease, color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.project .btn{
+    height: 2rem;
+    padding: 10px 20px;
+    border-radius: 3px;
+    line-height: 0.7rem;
+    background: linear-gradient(to bottom right, #759ec7, #ffffff);
+    color: blue;
+}
+
+.project a{
+    text-decoration: none;
+}
+
+.project-one {
+    background-image: url("../images/project-one.svg");
+}
+
+.project-two {
+    background-image: url("../images/project-two.svg");
+}
+
+.project-three {
+    background-image: url("../images/project-three.svg");
+}
+
+.project-four {
+    background-image: url("../images/project-four.svg");
+}
+
+.project:hover{
+    background-color: black;
+    box-shadow: 4px 4px 12px #00000099;
+}

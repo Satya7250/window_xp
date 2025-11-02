@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Music Player</title>
+  <link rel="icon" href="images/favicon.png" />
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #000;
+      font-family: Consolas, monospace;
+    }
+
+    .player-card {
+      width: 500px;
+      background: #111;
+      border: 2px solid #0f0;
+      padding: 30px;
+      color: #0f0;
+      text-align: center;
+      border-radius: 10px;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    button {
+      background: transparent;
+      color: #0f0;
+      border: 2px solid #0f0;
+      padding: 10px 25px;
+      margin: 10px;
+      font-size: 18px;
+      cursor: pointer;
+      border-radius: 2rem;
+      transition: all 0.2s;
+    }
+
+    button:hover {
+      background: #0f0;
+      color: #000;
+    }
+
+    audio::-webkit-media-controls-panel {
+      background-color: #b98383;
+      border-radius: 8px;
+    }
+    audio::-webkit-media-controls-play-button {
+      background-color: #0f0;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="player-card">
+    <h2>🎵 Player</h2>
+    <audio id="player" controls></audio>
+
+    <div>
+      <button onclick="prevMusic()">⏮</button>
+      <button onclick="togglePlay()">⏯</button>
+      <button onclick="nextMusic()">⏭</button>
+    </div>
+  </div>
+
+  <script>
+    //Music object
+    const songs = [
+      "music/song1.mp3",
+      "music/song2.mp3",
+      "music/song3.mp3",
+      "music/song4.mp3"
+    ];
+
+    let i = 0;
+    const player = document.getElementById("player");
+
+    function loadSong(index) {
+      player.src = songs[index];
+    }
+
+    //play method
+    function playMusic() {
+      player.play();
+    }
+
+    //toggle btn
+    function togglePlay() {
+      if (!player.src || player.src === window.location.href) {
+        loadSong(i);
+        playMusic();
+      } else if (player.paused) {
+        playMusic();
+      } else {
+        player.pause();
+      }
+    }
+
+    //Next music
+    function nextMusic() {
+      i = (i + 1) % songs.length;
+      loadSong(i);
+      playMusic();
+    }
+
+    //Previous music
+    function prevMusic() {
+      i = (i - 1 + songs.length) % songs.length;
+      loadSong(i);
+      playMusic();
+    }
+
+    // Auto play next song when current one ends
+    player.addEventListener("ended", nextMusic);
+  </script>
+
+</body>
+
+</html>

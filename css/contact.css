@@ -1,0 +1,85 @@
+.contact-display {
+    display: none;
+    position: fixed;
+    height: 85%;
+    width: 90%;
+    max-width: 900px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid #000080;
+    background-color: #ffffff;
+    z-index: 999;
+}
+
+.contact-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-group input, 
+.form-group textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-family: Tahoma, sans-serif;
+}
+
+.send-btn {
+    background-color: #3b6ea5;
+    color: white;
+    border: 1px solid #2c5282;
+    padding: 8px 16px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.contact-info {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #ccc;
+}
+
+.contact-info h3 {
+    color: #003366;
+    margin-bottom: 15px;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.social-links img {
+    width: 32px;
+    height: 32px;
+    transition: transform 0.2s;
+}
+
+.social-links img:hover {
+    transform: scale(1.1);
+}
+
+
+.about-display,
+.resume-display,
+.project-display,
+.contact-display {
+    transition: all 0.3s ease;
+}

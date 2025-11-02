@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Mini CMD</title>
+  <link rel="icon" href="images/favicon.png"/>
+  <style>
+    body {
+      margin: 0;
+      background: #000;
+      color: #0f0;
+      font-family: Consolas, monospace;
+    }
+
+    #terminal {
+      height: 100vh;
+      padding: 10px;
+      overflow-y: auto;
+      white-space: pre-wrap;
+    }
+
+    .line {
+      margin: 2px 0;
+    }
+
+    #input-line {
+      display: flex;
+    }
+
+    #prompt {
+      margin-right: 5px;
+    }
+
+    input {
+      background: transparent;
+      border: none;
+      outline: none;
+      color: #0f0;
+      width: 100%;
+      font-family: inherit;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="terminal"></div>
+
+  <script>
+    const terminal = document.getElementById("terminal");
+
+    function focusInput() {
+      const input = document.getElementById("cmdInput");
+      if (input) input.focus();
+    }
+
+    // create input line
+    function createInputLine() {
+      const div = document.createElement("div");
+      div.id = "input-line";
+      div.innerHTML = `<span id="prompt">C:\\User&gt;</span>
+                   <input id="cmdInput" autofocus />`;
+      terminal.appendChild(div);
+      focusInput();
+      addInputListener();
+    }
+
+    // print output
+    function print(text) {
+      const div = document.createElement("div");
+      div.className = "line";
+      div.textContent = text;
+      terminal.insertBefore(div, document.getElementById("input-line"));
+      terminal.scrollTop = terminal.scrollHeight;
+    }
+
+    // run commands
+    function run(cmd) {
+      if (cmd === "help") print("Commands: help, about, clear");
+      else if (cmd === "about") print("Mini CMD by Satya");
+      else if (cmd === "clear") {
+        terminal.innerHTML = "";
+        createInputLine();
+        return;
+      }
+      else if (cmd) print("'" + cmd + "' is not recognized.");
+    }
+
+    // input handler
+    function addInputListener() {
+      document.getElementById("cmdInput").addEventListener("keydown", function (e) {
+        if (e.key === "Enter") {
+          const cmd = this.value.trim();
+          print("C:\\User> " + cmd);
+          run(cmd);
+          this.value = "";
+        }
+      });
+    }
+
+    // CLICK ANYWHERE TO FOCUS ✅
+    document.addEventListener("click", focusInput);
+
+    // boot
+    print("Mini CMD by Satya");
+    print("Type help to see commands\n");
+    createInputLine();
+  </script>
+</body>
+
+</html>

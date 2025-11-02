@@ -1,0 +1,45 @@
+*{ 
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box; 
+} 
+
+.container{ 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  height: 100vh; 
+  background-color: #E2DDB4; 
+  position: relative; 
+} 
+
+.main-container{ 
+  position: absolute; 
+  height: 500px; 
+  width: 100%; 
+  background-color: #242322; 
+} 
+
+.main-container::before { 
+  content: ''; 
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  bottom: 0; 
+  background-image: 
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), 
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px); 
+  background-size: 10px 10px; 
+} 
+
+.main-container p { 
+  position: absolute; 
+  left: 50%; 
+  transform: translateX(-50%); 
+  bottom: 10rem; 
+  font-size: 7rem; 
+  font-family: 'Poppins', sans-serif; 
+  font-weight: 700; 
+  color: brown; 
+}

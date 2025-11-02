@@ -1,0 +1,277 @@
+.start-display{
+    position: absolute;
+    height: 500px;
+    width: 400px;
+    border-radius: 1rem;
+    bottom: 2.5rem;
+    left: 0;
+    visibility: hidden;
+}
+
+.box1:focus-within .start-display {
+    visibility: visible;
+}
+
+.inner-box{
+    border-radius: 0 0 20px;
+    height: 430px;
+    width: 198px;
+    display: inline-block;
+    background-color: white;
+}
+
+.up-bar{
+    width: 100%;
+    background-color: #6161b3;
+    height: 60px;
+    border-radius:0 1rem 0 0;
+}
+
+.avatar-container img{
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top: 5px;
+    left: 6px;
+}
+
+.avatar{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border: solid white 2px;
+    border-radius: 4px;
+}
+
+.avatar-container p{
+    position: absolute;
+    left: 4rem;
+    top: 20px;
+    font-size: 20px;
+    color: white;
+}
+
+.down-bar {
+    position: absolute;
+    width: 100%;
+    background-color: #6161b3;
+    height: 60px;
+    bottom: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 10px;
+    gap: 1rem;
+}
+
+.action-btn {
+    display: flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.action-btn img {
+    height: 24px;
+    width: 24px;
+}
+
+.shut-display{
+    position: fixed;
+    height: 275px;
+    width: 400px;
+    border-radius: 0.5rem;
+    background-color: #5b9ff8;
+    cursor: default;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 15rem;
+    z-index: 11;
+    visibility: hidden;
+}
+
+.action-btn:focus-within .shut-display {
+    visibility: visible;
+}
+
+.n{
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    background-color: #231386;
+    
+}
+.nav1{
+    border-radius:0.5rem 0.5rem 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+.nav2{
+    border-radius: 0 0 0.5rem 0.5rem;
+    bottom: 0;
+}
+
+.nav2 button{
+    position: absolute;
+    right: 4px;
+    padding: 4px;
+    bottom: 0.7rem;
+}
+
+.mid{
+    position: absolute;
+    bottom: 110px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 60px;
+}
+
+.mid .left,
+.mid .right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: #333;
+    font-size: 12px;
+    font-weight: 700;
+    text-align: center;
+    padding: 8px;
+}
+
+.mid .left:hover {
+    background-color: #e0e0e0;
+    border-color: #999;
+    transform: translateY(-2px);
+}
+
+.mid .left img,
+.mid .right img {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 4px;
+}
+
+/* Start Menu Items Styling */
+.inner-box {
+    padding: 10px 0;
+    overflow-y: auto;
+}
+
+.menu-section {
+    margin-bottom: 15px;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    padding: 5px 12px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    border-radius: 3px;
+    margin: 2px 6px;
+}
+
+.menu-item:hover {
+    background-color: #e0e8ff;
+}
+
+.menu-item img {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+    flex-shrink: 0;
+}
+
+.menu-item span {
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 12px;
+    color: #333;
+}
+
+.menu-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-title {
+    font-weight: 600;
+    font-size: 13px;
+    color: #333;
+    margin-bottom: 2px;
+}
+
+.menu-subtitle {
+    font-size: 11px;
+    color: #666;
+}
+
+.menu-section .menu-title:first-child {
+    font-weight: bold;
+    color: #0066cc;
+    padding: 8px 12px 4px 12px;
+    border-bottom: 1px solid #e0e0e0;
+    margin-bottom: 6px;
+    background: none;
+    cursor: default;
+}
+
+.menu-section .menu-title:first-child:hover {
+    background: none;
+}
+
+.menu-footer {
+    margin-top: auto;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 8px;
+}
+
+.all-programs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 3px;
+    margin: 2px 6px;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: #333;
+    transition: background-color 0.2s;
+}
+
+.all-programs:hover {
+    background-color: #e0e8ff;
+}
+
+.arrow {
+    font-size: 10px;
+    color: #666;
+}
+
+.menu-item a,
+.left a{
+    text-decoration: none;
+    color: #333;
+}
+
+.start-display .right{
+    background-color: #bdbde5;
+}
+
+.start-display .r{
+    background-color: #0066cc;
+}

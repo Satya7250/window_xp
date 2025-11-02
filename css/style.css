@@ -1,0 +1,122 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+}
+/* #242322 */
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #242322;
+    position: relative;
+}
+.container img {
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    margin-bottom: 5%;
+}
+.container h1 {
+    position: absolute;
+    bottom : 14rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: clamp(1.5rem, 5vw, 3rem);
+}
+
+.container p {
+    position: absolute;
+    bottom : 12rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: clamp(1rem, 3vw, 1.5rem);
+}
+
+.container h2 {
+    position: absolute;
+    bottom : 1rem;
+    right: 10px;
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container h5 {
+    position: absolute;
+    bottom : 2rem;
+    left: 30px;
+    font-size: 1.1rem;
+    font-family:'Times New Roman', Times, serif;
+}
+
+.loader-container {
+    position: absolute;
+    bottom: 10rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.loader {
+    width: 300px;
+    height: 20px;
+    background: #000;
+    border: 2px solid #3b6ea6;
+    border-radius: 3px;
+    padding: 2px;
+    display: flex;
+    gap: 2px;
+    /* overflow: hidden; */
+}
+
+/* .block {
+    background: linear-gradient(#5d8bc7, #3b6ea5);
+    border-radius: 1px;
+    width: 15px;
+    height: 100%;
+    animation: slide 1.8s linear infinite;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(200px);
+    }
+} */
+
+.block{
+    flex: 1;
+    background: linear-gradient(#5d8bc7, #3b6ea5);
+    border-radius: 1px;
+    animation: load 2s ease-in-out infinite;
+}
+
+.block:nth-child(1){
+    animation-delay: 0s;
+}
+.block:nth-child(2){
+    animation-delay: 0.1s;
+}
+.block:nth-child(3){
+    animation-delay: 0.2s;
+}
+.block:nth-child(4){
+    animation-delay: 0.3s;
+}
+.block:nth-child(5){
+    animation-delay: 0.4s;
+}
+
+@keyframes load {
+    0%, 100%{
+        opacity: 0.2;
+    }
+    50%{
+        opacity: 1;
+    }
+}
+
