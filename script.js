@@ -92,3 +92,12 @@ function activateMusicPlayer() {
 
 document.addEventListener('wheel', e => e.preventDefault(), { passive: false });
 document.addEventListener('touchmove', e => e.preventDefault(), { passive: false });
+
+//toggle button for full screen
+function toggleFullScreen() {
+  if (!document.fullscreenElement) {
+    document.documentElement.requestFullscreen();
+  } else {
+    document.exitFullscreen();
+  }
+}
